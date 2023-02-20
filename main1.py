@@ -147,7 +147,3 @@ while True:
 
 days_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 print(f"{num_day} day of the week is {days_list[num_day - 1]}")
-
-
-days_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-print(f"{num_day} day of the week is {days_list[num_day - 1]}")

@@ -1,16 +1,18 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+"""При выполнении дз использовать Git (делать коммиты, работать в dev ветке,
+для каждой задачи отдельная ветка из dev ветки и потом делать merge в dev ветку,
+после выполнения всех заданий сделать merge develop в master)
+1. Пользователь вводит с клавиатуры три числа.
+В зависимости от выбора пользователя программа выводит на экран
+максимум из трёх, минимум из трёх или среднеарифметическое трёх чисел.
+2. Пользователь вводит с клавиатуры количество метров.
+В зависимости от выбора пользователя программа переводит
+метры в мили, дюймы или ярды.
+3. Пользователь вводит с клавиатуры номер дня недели (1-7).
+Необходимо вывести на экран названия дня недели.
+Например, если 1, то на экране надпись понедельник, 2 — вторник и т.д.
+4. Пользователь вводит два числа.
+Определить, равны ли эти числа, и, если нет,
+вывести их на экран в порядке возрастания
+Пример с пары ниже.
+Прислать архив с проектом польностью чтоб можно было проверить вашу работу с git.
+"""

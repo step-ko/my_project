@@ -16,3 +16,17 @@
 Пример с пары ниже.
 Прислать архив с проектом польностью чтоб можно было проверить вашу работу с git.
 """
+
+
+def input_number() -> int:
+    while True:
+        try:
+            number = float(input("Please enter any number ->"))
+            break
+        except ValueError:
+            print("Error. The number consists of characters from 0 to 9")
+    number = round(number, 2)
+    return number
+
+
+num1, num2, num3 = input_number(), input_number(), input_number()

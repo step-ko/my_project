@@ -44,32 +44,35 @@ def average_number(list_number: list[int]) -> int:
     return number
 
 
-def menu():
+def action_for_menu() -> str:
+    action_list = ["1", "2", "3", ""]
     while True:
-        try:
-            print(f"Menu:".center(30), "\n",
-                  f"*" * 30, "\n",
-                  f"Press <1> to find the maximum number".center(30), "\n",
-                  f"Press <2> to find minimum number".center(30), "\n",
-                  f"Press <3> to find the average".center(30), "\n",
-                  f"Press enter to exit".center(30), "\n",
-                  f"*" * 30, "\n",)
-            act = int(input("Please select an item from the menu -> "))
-        except ValueError:
-            print("Please select an item from the menu.\nTo exit, please press enter.")
-        break
-
-    while True:
-        if act == 1:
-            print(f"The maximum number is {max_number(nums_list)}.")
-        elif act == 2:
-            print(f"The minimum number is {min_number(nums_list)}.")
-        elif act == 3:
-            print(f"The average value is {average_number(nums_list)}.")
-        elif act == "":
+        act = input("Please select an item from the menu -> ")
+        if act in action_list:
             break
         else:
             print("Please select an item from the menu.\nTo exit, please press enter.")
+    return act
+
+
+def menu():
+    while True:
+        print(f"Menu:".center(30), "\n",
+              f"*" * 30, "\n",
+              f"Press <1> to find the maximum number".center(30), "\n",
+              f"Press <2> to find minimum number".center(30), "\n",
+              f"Press <3> to find the average".center(30), "\n",
+              f"Press enter to exit".center(30), "\n",
+              f"*" * 30, "\n", )
+        act = action_for_menu()
+        if act == "":
+            break
+        elif int(act) == 1:
+            print(f"The maximum number is {max_number(nums_list)}.")
+        elif int(act) == 2:
+            print(f"The minimum number is {min_number(nums_list)}.")
+        elif int(act) == 3:
+            print(f"The average value is {average_number(nums_list)}.")
 
 
 num1, num2, num3 = input_number(), input_number(), input_number()

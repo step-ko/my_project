@@ -57,15 +57,16 @@ def action_for_menu() -> str:
 
 def menu():
     while True:
-        print(f"Menu:".center(30), "\n",
-              f"*" * 30, "\n",
-              f"Press <1> to find the maximum number".center(30), "\n",
-              f"Press <2> to find minimum number".center(30), "\n",
-              f"Press <3> to find the average".center(30), "\n",
-              f"Press enter to exit".center(30), "\n",
-              f"*" * 30, "\n", )
+        print(f"Menu:".center(40), "\n",
+              f"*" * 40, "\n",
+              f"Press <1> to find the maximum number".center(40), "\n",
+              f"Press <2> to find minimum number".center(40), "\n",
+              f"Press <3> to find the average".center(40), "\n",
+              f"Press enter to exit".center(40), "\n",
+              f"*" * 40)
         act = action_for_menu()
         if act == "":
+            print("Goodbye :)")
             break
         elif int(act) == 1:
             print(f"The maximum number is {max_number(nums_list)}.")

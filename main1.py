@@ -78,7 +78,5 @@ def menu1():
             print(f"The average value is {average_number(nums_list)}.")
 
 
-# num1, num2, num3 = input_number(), input_number(), input_number()
-# nums_list = [num1, num2, num3]
 menu1()
 

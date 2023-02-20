@@ -95,7 +95,7 @@ def input_metr() -> int:
     return number
 
 
-def action_for_menu1():
+def action_for_menu2():
     action_list = ["1", "2", "3", ""]
     while True:
         act = input("Please select an item from the menu -> ")

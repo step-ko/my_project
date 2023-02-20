@@ -28,5 +28,14 @@ def input_number() -> int:
     number = round(number, 2)
     return number
 
+def max_number(list_number: list[int]) -> int:
+    number = max(list_number)
+    return number
 
-num1, num2, num3 = input_number(), input_number(), input_number()
+
+num1, num2, num3, action = input_number(), input_number(), input_number(), 0
+
+
+while action == "":
+
+

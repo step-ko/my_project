@@ -147,3 +147,7 @@ while True:
 
 days_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 print(f"{num_day} day of the week is {days_list[num_day - 1]}")
+
+# 4. Пользователь вводит два числа. Определить, равны ли эти числа, и, если нет,
+# вывести их на экран в порядке возрастания.
+

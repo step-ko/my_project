@@ -78,7 +78,7 @@ def menu1():
             print(f"The average value is {average_number(nums_list)}.")
 
 
-menu1()
+# menu1()
 
 # 2. Пользователь вводит с клавиатуры количество метров.
 # В зависимости от выбора пользователя программа переводит
@@ -130,7 +130,7 @@ def menu2():
             print(f"{meters} meters equals {result} yards.")
 
 
-menu2()
+# menu2()
 
 # 3. Пользователь вводит с клавиатуры номер дня недели (1-7).
 # Необходимо вывести на экран названия дня недели.
@@ -151,3 +151,22 @@ print(f"{num_day} day of the week is {days_list[num_day - 1]}")
 # 4. Пользователь вводит два числа. Определить, равны ли эти числа, и, если нет,
 # вывести их на экран в порядке возрастания.
 
+
+def input_number4() -> float:
+    while True:
+        try:
+            number = float(input("Please enter any number -> "))
+            break
+        except ValueError:
+            print("Error. The number consists of characters from 0 to 9")
+    number = round(number, 2)
+    return number
+
+
+num_1, num_2 = input_number4(), input_number4()
+if num_1 == num_2:
+    print("Numbers are equal to each other.")
+elif num_1 < num_2:
+    print(num_1, num_2)
+else:
+    print(num_2, num_1)

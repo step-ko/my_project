@@ -32,6 +32,10 @@ def max_number(list_number: list[int]) -> int:
     number = max(list_number)
     return number
 
+def min_number(list_number: list[int]) -> int:
+    number = min(list_number)
+    return number
+
 
 num1, num2, num3, action = input_number(), input_number(), input_number(), 0
 

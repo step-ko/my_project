@@ -95,5 +95,20 @@ def input_metr() -> int:
     return number
 
 
+def action_for_menu1():
+    action_list = ["1", "2", "3", ""]
+    while True:
+        act = input("Please select an item from the menu -> ")
+        if act in action_list:
+            break
+        else:
+            print("Please select an item from the menu.\nTo exit, please press enter.")
+    return act
+
+
+print("Press <1> to convert meters to miles.")
+print("Press <2> to convert meters to inches.")
+print("Press <3> to convert meters to yards.")
+
 meters = input_metr()
 print(meters)

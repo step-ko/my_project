@@ -132,6 +132,22 @@ def menu2():
 
 menu2()
 
+# 3. Пользователь вводит с клавиатуры номер дня недели (1-7).
+# Необходимо вывести на экран названия дня недели.
+# Например, если 1, то на экране надпись понедельник, 2 — вторник и т.д.
 
 
+while True:
+    try:
+        num_day = int(input("Please enter the number of the day of the week. -> "))
+    except ValueError:
+        print("Day number can be from 1 to 7.")
+    if 1 <= num_day <= 7:
+        break
 
+days_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+print(f"{num_day} day of the week is {days_list[num_day - 1]}")
+
+
+days_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+print(f"{num_day} day of the week is {days_list[num_day - 1]}")

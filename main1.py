@@ -96,6 +96,7 @@ def input_metr() -> int:
 
 
 def item_of_menu2():
+
     action_list = ["1", "2", "3", ""]
     while True:
         act = input("Please select an item from the menu -> ")
@@ -106,9 +107,13 @@ def item_of_menu2():
     return act
 
 
-print("Press <1> to convert meters to miles.")
-print("Press <2> to convert meters to inches.")
-print("Press <3> to convert meters to yards.")
+def menu2():
+    print(f"Menu".center(40),
+          f"Press <1> to convert meters to miles.".center(40),
+          f"Press <2> to convert meters to inches.".center(40),
+          f"Press <3> to convert meters to yards."
+          f"")
+
 
 meters = input_metr()
 print(meters)

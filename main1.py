@@ -44,18 +44,20 @@ def average_number(list_number: list[int]) -> int:
     return number
 
 
-def action_for_menu() -> str:
+def action_for_menu1() -> str:
     action_list = ["1", "2", "3", ""]
     while True:
         act = input("Please select an item from the menu -> ")
         if act in action_list:
             break
         else:
-            print("Please select an item from the menu.\nTo exit, please press enter.")
+            print("Error!!!")
     return act
 
 
-def menu():
+def menu1():
+    num1, num2, num3 = input_number(), input_number(), input_number()
+    nums_list = [num1, num2, num3]
     while True:
         print(f"Menu:".center(40), "\n",
               f"*" * 40, "\n",
@@ -64,7 +66,7 @@ def menu():
               f"Press <3> to find the average".center(40), "\n",
               f"Press enter to exit".center(40), "\n",
               f"*" * 40)
-        act = action_for_menu()
+        act = action_for_menu1()
         if act == "":
             print("Goodbye :)")
             break
@@ -76,9 +78,7 @@ def menu():
             print(f"The average value is {average_number(nums_list)}.")
 
 
-# num1, num2, num3 = input_number(), input_number(), input_number()
-# nums_list = [num1, num2, num3]
-# menu()
+menu1()
 
 # 2. Пользователь вводит с клавиатуры количество метров.
 # В зависимости от выбора пользователя программа переводит

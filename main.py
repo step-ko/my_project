@@ -21,28 +21,58 @@
 def input_number() -> int:
     while True:
         try:
-            number = float(input("Please enter any number ->"))
+            number = float(input("Please enter any number -> "))
             break
         except ValueError:
             print("Error. The number consists of characters from 0 to 9")
     number = round(number, 2)
     return number
 
+
 def max_number(list_number: list[int]) -> int:
     number = max(list_number)
     return number
+
 
 def min_number(list_number: list[int]) -> int:
     number = min(list_number)
     return number
 
+
 def average_number(list_number: list[int]) -> int:
-    number = sum(list_number) / len(list_number)
+    number = round((sum(list_number) / len(list_number)), 2)
     return number
 
-num1, num2, num3, action = input_number(), input_number(), input_number(), 0
+
+def menu():
+    while True:
+        try:
+            print(f"Menu:".center(30), "\n",
+                  f"*" * 30, "\n",
+                  f"Press <1> to find the maximum number".center(30), "\n",
+                  f"Press <2> to find minimum number".center(30), "\n",
+                  f"Press <3> to find the average".center(30), "\n",
+                  f"Press enter to exit".center(30), "\n",
+                  f"*" * 30, "\n",)
+            act = int(input("Please select an item from the menu -> "))
+        except ValueError:
+            print("Please select an item from the menu.\nTo exit, please press enter.")
+        break
+
+    while True:
+        if act == 1:
+            print(f"The maximum number is {max_number(nums_list)}.")
+        elif act == 2:
+            print(f"The minimum number is {min_number(nums_list)}.")
+        elif act == 3:
+            print(f"The average value is {average_number(nums_list)}.")
+        elif act == "":
+            break
+        else:
+            print("Please select an item from the menu.\nTo exit, please press enter.")
 
 
-while action == "":
-
+num1, num2, num3 = input_number(), input_number(), input_number()
+nums_list = [num1, num2, num3]
+menu()
 

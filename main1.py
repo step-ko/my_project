@@ -18,7 +18,7 @@
 """
 
 
-def input_number() -> int:
+def input_number() -> float:
     while True:
         try:
             number = float(input("Please enter any number -> "))
@@ -55,28 +55,45 @@ def action_for_menu() -> str:
     return act
 
 
-# def menu():
-#     while True:
-#         print(f"Menu:".center(40), "\n",
-#               f"*" * 40, "\n",
-#               f"Press <1> to find the maximum number".center(40), "\n",
-#               f"Press <2> to find minimum number".center(40), "\n",
-#               f"Press <3> to find the average".center(40), "\n",
-#               f"Press enter to exit".center(40), "\n",
-#               f"*" * 40)
-#         act = action_for_menu()
-#         if act == "":
-#             print("Goodbye :)")
-#             break
-#         elif int(act) == 1:
-#             print(f"The maximum number is {max_number(nums_list)}.")
-#         elif int(act) == 2:
-#             print(f"The minimum number is {min_number(nums_list)}.")
-#         elif int(act) == 3:
-#             print(f"The average value is {average_number(nums_list)}.")
+def menu():
+    while True:
+        print(f"Menu:".center(40), "\n",
+              f"*" * 40, "\n",
+              f"Press <1> to find the maximum number".center(40), "\n",
+              f"Press <2> to find minimum number".center(40), "\n",
+              f"Press <3> to find the average".center(40), "\n",
+              f"Press enter to exit".center(40), "\n",
+              f"*" * 40)
+        act = action_for_menu()
+        if act == "":
+            print("Goodbye :)")
+            break
+        elif int(act) == 1:
+            print(f"The maximum number is {max_number(nums_list)}.")
+        elif int(act) == 2:
+            print(f"The minimum number is {min_number(nums_list)}.")
+        elif int(act) == 3:
+            print(f"The average value is {average_number(nums_list)}.")
 
 
-num1, num2, num3 = input_number(), input_number(), input_number()
-nums_list = [num1, num2, num3]
+# num1, num2, num3 = input_number(), input_number(), input_number()
+# nums_list = [num1, num2, num3]
 # menu()
 
+# 2. Пользователь вводит с клавиатуры количество метров.
+# В зависимости от выбора пользователя программа переводит
+# метры в мили, дюймы или ярды.
+
+
+def input_metr() -> int:
+    while True:
+        try:
+            number = int(input("Please enter the number of meters -> "))
+            break
+        except ValueError:
+            print("Error. The number consists of characters from 0 to 9")
+    return number
+
+
+meters = input_metr()
+print(meters)

@@ -103,17 +103,35 @@ def item_of_menu2():
         if act in action_list:
             break
         else:
-            print("Please select an item from the menu.\nTo exit, please press enter.")
+            print("Error!")
     return act
 
 
 def menu2():
-    print(f"Menu".center(40),
-          f"Press <1> to convert meters to miles.".center(40),
-          f"Press <2> to convert meters to inches.".center(40),
-          f"Press <3> to convert meters to yards."
-          f"")
+    meters = input_metr()
+    while True:
+        print(f"Menu".center(40), "\n",
+              f"Press <1> to convert meters to miles.".center(40), "\n",
+              f"Press <2> to convert meters to inches.".center(40), "\n",
+              f"Press <3> to convert meters to yards.".center(40), "\n",
+              f"To exit, please press enter.".center(40)
+              )
+        act = item_of_menu2()
+        if act == "":
+            break
+        elif int(act) == 1:
+            result = round((meters * 0.000621371192), 2)
+            print(f"{meters} meters equals {result} miles.")
+        elif int(act) == 2:
+            result = round((meters * 39.37008), 2)
+            print(f"{meters} meters equals {result} inches.")
+        elif int(act) == 3:
+            result = round((meters * 1.0936133), 2)
+            print(f"{meters} meters equals {result} yards.")
 
 
-meters = input_metr()
-print(meters)
+menu2()
+
+
+
+

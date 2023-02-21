@@ -64,19 +64,57 @@ def add_employee(name_of_file):
 
 
 def edit_employee(name_of_file):
+    print_open_file(name_of_file)
+    edit_list = []
     with open(name_of_file, "r", newline="") as file:
         reader = csv.DictReader(file)
-
+        for row in reader:
+            edit_list.append(row)
+    while True:
+        need_num = input("To edit, please, enter the num of employee.\nTo exit, press Enter.")
+        if need_num == "":
+            break
+        if int(need_num) in range(1, len(edit_list) + 1):
+            for key in edit_list[int(need_num) - 1]:
+                print(f"Editing - {key}, current value - {edit_list[int(need_num) - 1][key]}."
+                      f"To cancel editing, press enter.")
+                new_value = input("Enter a new value -> ")
+                if new_value == "":
+                    pass
+                else:
+                    edit_list[int(need_num) - 1][key] = new_value
+            print("The data was changed successfully.")
+            break
+        else:
+            print("The specified number is not available.")
+    with open("new_employees.csv", "w", newline="") as file:
+        columns = ["name", "surname", "age", "job title"]
+        writer = csv.DictWriter(file, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(edit_list)
 
 
 def del_employee(name_of_file):
-    list_of_employee = []
-    with open(open_file(), "r", newline="") as file:
+    print_open_file(name_of_file)
+    edit_list = []
+    with open(name_of_file, "r", newline="") as file:
         reader = csv.DictReader(file)
         for row in reader:
-            user = {row}
-            list_of_employee = list_of_employee.append(user)
-    print(list_of_employee)
+            edit_list.append(row)
+    while True:
+        del_num = input("Please, choose the num of employee, what need to remove.\nTo exit, press Enter.")
+        if del_num == "":
+            break
+        if int(del_num) in range(1, len(edit_list) + 1):
+            edit_list.pop(int(del_num) -1)
+            break
+        else:
+            print("The specified number is not available.")
+    with open("new_employees.csv", "w", newline="") as file:
+        columns = ["name", "surname", "age", "job title"]
+        writer = csv.DictWriter(file, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(edit_list)
 
 
 def search_employee():
@@ -87,7 +125,7 @@ def display_employees():
     pass
 
 
-employees = [
+edit_list = [
         {"name": "Maksim", "surname": "Bychkov", "age": 38, "job title": "Director"},
         {"name": "Yuri", "surname": "Gun", "age": 38, "job title": "Manager"},
         {"name": "Slava", "surname": "Galagan", "age": 39, "job title": "Сourier"},
@@ -95,5 +133,6 @@ employees = [
 
 FILENAME = "new_employees.csv"
 # edit_employee(FILENAME)
-print_open_file(FILENAME)
+# print_open_file(FILENAME)
+del_employee(FILENAME)
 

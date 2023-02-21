@@ -59,5 +59,9 @@ while True:
         if guess == secret_number:
             print(f"Congratulations! You guessed the number {secret_number} in {count} tries")
             break
-        else hint = less more
+        else:
+            if guess > secret_number:
+                hint = "less"
+            elif guess < secret_number:
+                hint = "more"
             print(f"Sorry, but you're wrong. My number is {hint}.Try again.")

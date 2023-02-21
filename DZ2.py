@@ -24,11 +24,11 @@ print("Welcome to the game - Guess the Number !")
 secret_number = input_number()
 while True:
     count += 1
-    guessed_number = (min_value + max_value) // 2
+    guessed_number = (min_value1 + max_value1) // 2
     if secret_number == guessed_number:
         print(f"Your number is {guessed_number}, i was able to guess it in {count} tries")
         break
     elif secret_number < guessed_number:
-        max_value = guessed_number - 1
+        max_value1 = guessed_number - 1
     else:
-        min_value = guessed_number + 1
+        min_value1 = guessed_number + 1

@@ -56,12 +56,14 @@ while True:
     if guess in guesses:
         print("You have already entered this number, try another one.")
     else:
+        guesses.append(guess)
         if guess == secret_number:
-            print(f"Congratulations! You guessed the number {secret_number} in {count} tries")
+            print(f"<<<Congratulations!!!>>> \nYou guessed the number {secret_number} in {count} tries")
             break
         else:
             if guess > secret_number:
                 hint = "less"
             elif guess < secret_number:
                 hint = "more"
-            print(f"Sorry, but you're wrong. My number is {hint}.Try again.")
+            print(f"Attempt {count}. Sorry, but you're wrong. My number is {hint}.Try again.\n"
+                  f"\t\tThe previously indicated numbers - {guesses}.")

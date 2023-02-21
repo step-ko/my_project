@@ -6,7 +6,7 @@ import random
 - Создать игру угадай число в которой пк будет отгадывать число загаданное игроком.
 """
 
-min_value, max_value, count = 0, 100, 0
+min_value1, max_value1, count = 0, 100, 0
 
 
 def input_number() -> int:

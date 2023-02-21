@@ -1,4 +1,6 @@
-name,age
-Maks,38
-Yuri,38
-Petr,36
+name,surname,age,job title
+Maks,Bychkov,38, Director
+Yuri,Gun,38, Manager
+Petr,Stepko,36, Driver
+name,surname,age,job title
+Ivan,kukuruza,18,Cleaner

@@ -1,20 +1,15 @@
 import csv
 
 
-# FILENAME1 = "employees1.csv"
-# employees1 = [
-#     {"name": "Maks", "age": 38},
-#     {"name": "Yuri", "age": 38},
-#     {"name": "Petr", "age": 36}
-# ]
-# with open(FILENAME1, "w", newline="") as file:
-#     columns = ["name", "age"]
-#     writer = csv.DictWriter(file, fieldnames=columns)
-#     writer.writeheader()
-#     writer.writerows(employees1)
+def new_file(list_users):
+    with open("new_employees.csv", "w", newline="") as file:
+        columns = ["name", "surname", "age", "job title"]
+        writer = csv.DictWriter(file, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(list_users)
 
 
-def open_file():
+def open_file() -> str:
     while True:
         try:
             FILENAME = input("Please specify a file to open -> ")
@@ -26,11 +21,11 @@ def open_file():
 
 
 def print_open_file(name_of_file):
-    with open(FILENAME, "r", newline="") as file:
+    with open(name_of_file, "r", newline="") as file:
         reader = csv.DictReader(file)
         print("*" * 40)
         for row in reader:
-            print(row["name"], " - ", row["age"])
+            print(row["name"], "-", row["surname"], "-", row["age"], "-", row["job title"])
         print("*" * 40)
 
 
@@ -57,12 +52,30 @@ def edit_employee():
 
 
 def del_employee():
-    pass
+    list_of_employee = []
+    with open(open_file(), "r", newline="") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            user = {row}
+            list_of_employee = list_of_employee.append(user)
+    print(list_of_employee)
 
 
 def search_employee():
     pass
 
-FILENAME = open_file()
-print_open_file(FILENAME)
-add_employee()
+
+def display_employees():
+    pass
+
+employees = [
+        {"name": "Maksim", "surname": "Bychkov", "age": 38, "job title": "Director"},
+        {"name": "Yuri", "surname": "Gun", "age": 38, "job title": "Manager"},
+        {"name": "Slava", "surname": "Galagan", "age": 39, "job title": "Сourier"},
+    ]
+
+new_file(employees)
+# FILENAME = open_file()
+# print_open_file("employees.csv")
+# add_employee()
+

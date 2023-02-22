@@ -1,24 +1,39 @@
 import csv
+from os import system, name
+
+
+clean_list = [{"name": "", "surname": "", "age": 0, "": ""}]
+
+
+def clear():
+    if name == 'nt':    # for windows
+        _ = system('cls')
+    else:    # for mac and linux(here, os.name is 'posix')
+        _ = system('clear')
 
 
 def new_file(list_users):
-    name = input("Enter a name for the new file with the CSV extension.")
-    with open(name, "w", newline="") as file:
+    new_name = input("Enter a name for the new file with the CSV extension.")
+    with open(new_name, "w", newline="") as file:
         columns = ["name", "surname", "age", "job title"]
         writer = csv.DictWriter(file, fieldnames=columns)
         writer.writeheader()
         writer.writerows(list_users)
+    return name
 
 
 def open_file() -> str:
     while True:
         try:
-            FILENAME = input("Please specify a file to open -> ")
-            with open(FILENAME, "r", newline="") as file:
+            filename = input("Please specify a file to open (for example: new_employees.csv) -> ")
+            if filename == "":
+                new_file(clean_list)
+            with open(filename, "r", newline="") as file:
                 break
+
         except FileNotFoundError:
             print("File not found. Сheck the filename or create a new file.")
-    return FILENAME
+    return filename
 
 
 def print_open_file(name_of_file):
@@ -83,7 +98,6 @@ def add_employee(name_of_file):
     with open(name_of_file, "a", newline="") as file:
         columns = ["name", "surname", "age", "job title"]
         writer = csv.DictWriter(file, fieldnames=columns)
-        writer.writeheader()
         writer.writerow(new_user)
 
 
@@ -154,6 +168,7 @@ def display_employees(name_of_file):
                        f" - > \n"))
     if action in range(1, 4) and action == 1:
         print_open_file(name_of_file)
+        for_continue = input("For continue press enter -> ")
 
     elif action in range(1, 4) and action == 2:
         need_age = input("Please, enter the age for the search ->")
@@ -165,6 +180,7 @@ def display_employees(name_of_file):
                     result_list.append(row)
         if len(result_list) == 0:
             print(f"No employees under the age of {need_age} years were found.")
+            for_continue = input("For continue press enter -> ")
         elif len(result_list) > 0:
             print(f"{len(result_list)} employees in age {need_age} years were found.")
             print_list(result_list)
@@ -183,6 +199,7 @@ def display_employees(name_of_file):
                     result_list.append(row)
         if len(result_list) == 0:
             print("Nothing found.")
+            for_continue = input("For continue press enter -> ")
         elif len(result_list) > 0:
             print(f"Found {len(result_list)} employees with entered letters ({need_letters}) in the surname.")
             print_list(result_list)
@@ -192,24 +209,35 @@ def display_employees(name_of_file):
                 new_file(result_list)
 
 
+def show_menu():
+    print(
+        f"Menu:".center(55), "\n",
+        f"*" * 55, "\n",
+        f"Press <1> to enter the data of the new employee.", "\n",
+        f"Press <2> to change the data of the employee.", "\n",
+        f"Press <3> to to remove the employee.", "\n",
+        f"Press <4> to display information the new employees.", "\n"
+        f"Press <9> to exit the program.", "\n",
+        f"*" * 55, sep=""
+    )
 
 
+menu_item = ""
+need_file = open_file()
 
-
-
-
-
-
-edit_list = [
-        {"name": "Maksim", "surname": "Bychkov", "age": 38, "job title": "Director"},
-        {"name": "Yuri", "surname": "Gun", "age": 38, "job title": "Manager"},
-        {"name": "Slava", "surname": "Galagan", "age": 39, "job title": "Сourier"},
-    ]
-
-FILENAME = "new_employees.csv"
-# edit_employee(FILENAME)
-# print_open_file(FILENAME)
-# del_employee(FILENAME)
-
-display_employees(FILENAME)
+while menu_item != "9":
+    show_menu()
+    menu_item = input("Please select a menu item -> ")
+    if menu_item == "1":
+        add_employee(need_file)
+    elif menu_item == "2":
+        edit_employee(need_file)
+    elif menu_item == "3":
+        del_employee(need_file)
+    elif menu_item == "4":
+        display_employees(need_file)
+    elif menu_item == "9":
+        print("GOODBYE.")
+        break
+    clear()
 

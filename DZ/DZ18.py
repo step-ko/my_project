@@ -37,6 +37,7 @@ inn_list = [1111111111, 2222222222, 3333333333]
 phone_list = [380979797777, 380636336333, 380663322555]
 chose_list = 2
 a, b = sort_lists(inn_list, phone_list, chose_list)
+
 print(a)
 print(b)
 

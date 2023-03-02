@@ -42,20 +42,20 @@ def print_open_file(name_of_file):
         reader = csv.DictReader(file)
         print('+', '-' * 3, '+', '-' * 15, '+', '-' * 25, '+', '-' * 3, '+', '-' * 11, '+', sep="")
         print(
-            f'|', "Num".center(3),
-            f'|', "Name".center(15),
-            f'|', "Surname".center(25),
-            f'|', "Age".center(3),
-            f'|', "Job title".center(11), "|", sep=""
+            '|', "Num".center(3),
+            '|', "Name".center(15),
+            '|', "Surname".center(25),
+            '|', "Age".center(3),
+            '|', "Job title".center(11), "|", sep=""
               )
         print('+', '-' * 3, '+', '-' * 15, '+', '-' * 25, '+', '-' * 3, '+', '-' * 11, '+', sep="")
         for row in reader:
             print(
-                f'|', str(count).center(3),
-                f'|', row["name"].center(15),
-                f'|', row["surname"].center(25),
-                f'|', row["age"].center(3),
-                f'|', row["job title"].center(11), "|", sep=""
+                '|', str(count).center(3),
+                '|', row["name"].center(15),
+                '|', row["surname"].center(25),
+                '|', row["age"].center(3),
+                '|', row["job title"].center(11), "|", sep=""
             )
             count += 1
         print('+', '-' * 3, '+', '-' * 15, '+', '-' * 25, '+', '-' * 3, '+', '-' * 11, '+', sep="")
@@ -63,22 +63,22 @@ def print_open_file(name_of_file):
 
 def print_list(some_list):
     count = 1
-    print('+', '-' * 3, '+', '-' * 15, '+', '-' * 25, '+', '-' * 3, '+', '-' * 11, '+', sep="")
+    print('+', '=' * 3, '+', '=' * 15, '+', '=' * 25, '+', '=' * 3, '+', '=' * 11, '+', sep="")
     print(
-        f'|', "Num".center(3),
-        f'|', "Name".center(15),
-        f'|', "Surname".center(25),
-        f'|', "Age".center(3),
-        f'|', "Job title".center(11), "|", sep=""
+        '|', "Num".center(3),
+        '|', "Name".center(15),
+        '|', "Surname".center(25),
+        '|', "Age".center(3),
+        '|', "Job title".center(11), "|", sep=""
     )
     print('+', '-' * 3, '+', '-' * 15, '+', '-' * 25, '+', '-' * 3, '+', '-' * 11, '+', sep="")
     for employee in some_list:
         print(
-            f'|', str(count).center(3),
-            f'|', employee["name"].center(15),
-            f'|', employee["surname"].center(25),
-            f'|', str(employee["age"]).center(3),
-            f'|', employee["job title"].center(11), "|", sep=""
+            '|', str(count).center(3),
+            '|', employee["name"].center(15),
+            '|', employee["surname"].center(25),
+            '|', str(employee["age"]).center(3),
+            '|', employee["job title"].center(11), "|", sep=""
         )
         count += 1
     print('+', '-' * 3, '+', '-' * 15, '+', '-' * 25, '+', '-' * 3, '+', '-' * 11, '+', sep="")
